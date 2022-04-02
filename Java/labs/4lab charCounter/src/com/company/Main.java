@@ -8,23 +8,23 @@ public class Main {
 
 
     public static void main(String[] args){
-        //считываем строку
+        // input str
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
 
-        //кладём в переменную test итерируемую строку
+        //put str in our test class
         iterString test = new iterString(str);
 
-        //кладём в iterator, собственно, итератор нашей строки
+        //put iterator of test class for our comfortable
         Iterator iterator = test.iterator();
 
-        //создаем хэш-таблицу с ключами a...z и заполняем ее нулями
+        //make hash table and initialize it with 0
         HashMap<Character, Integer> res = new HashMap<>();
         for(char i = 'a'; i <= 'z'; i++){
             res.put(i, 0);
         }
 
-        //итерируем нашу строку и считаем буквы
+        //iterate our str and count letters
         while(iterator.hasNext()){
             char a = (char)iterator.next();
             int buf = res.get(a);
@@ -33,7 +33,7 @@ public class Main {
         }
 
         /*
-        Решение без итерирования
+        without iteration
         for(int i = 0; i < str.length(); i++){
             char a = str.charAt(i);
             int buf = res.get(a);
