@@ -4,36 +4,58 @@ template<typename T>
 void Queue<T>::push(T value){
     total += value;
     node *elem = new node;
-    elem -> next = nullptr;
+    if(flag) elem -> next = nullptr;
+    if(!flag) elem -> prev = nullptr;
     elem -> value = value;
     if (head != nullptr){
-        elem -> prev = tail;
-        tail -> next = elem;
-        tail = elem;
+        if(flag){
+            elem -> prev = tail;
+            tail -> next = elem;
+            tail = elem;
+        }
+        if(!flag){
+            elem -> next = head;
+            head -> prev = elem;
+            head = elem;
+        }
     }
     else {
-        elem -> prev = nullptr;
+        if(flag) elem -> prev = nullptr;
+        if(!flag) elem -> next = nullptr;
         head = tail = elem;
     }
 }
 
 template<typename T>
 void Queue<T>::show(){
-    node *elem = tail;
+    node *elem;
+    if(flag) elem = tail;
+    if(!flag) elem = head;
     while (elem != nullptr){
         cout << elem->value << " ";
-        elem = elem->prev;
+        if(flag) elem = elem -> prev;
+        if(!flag) elem = elem -> next;
     }
     cout << endl;
 }
 
 template<typename T>
 T Queue<T>::pop(){
-    total -= tail->value;
-    T a = tail->value;
-    tail = tail->prev;
-    tail->next = nullptr;
-    return a;
+    if (flag){
+        total -= tail -> value;
+        T a = tail->value;
+        tail = tail->prev;
+        tail->next = nullptr;
+        return a;
+    }
+    if (!flag){
+        total -= head -> value;
+        T a = head -> value;
+        head = head -> next;
+        head -> prev = nullptr;
+        return a;
+    }
+    return 0;
 }
 
 template<typename T>
@@ -43,16 +65,16 @@ bool Queue<T>::empty(){
 
 template<typename T>
 void Queue<T>::reverse(){
-    node *buf = tail;
-    tail = head;
-    while(head != buf){
-        head = head->next;
-        swap(head->prev->prev, head->prev->next);
-    }
-    swap(head->next, head->prev);
+    if(flag) flag = !flag;
+    if(!flag == false) flag = !flag;
 }
 
 template<typename T>
 int Queue<T>::getTotal(){
     return total;
+}
+
+template<typename T>
+bool Queue<T>::getFlag(){
+    return flag;
 }

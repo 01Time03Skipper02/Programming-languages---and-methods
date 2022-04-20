@@ -17,14 +17,15 @@ class Queue{
     private:
         node *head, *tail;
         int total;
+        bool flag;
 
     public:
-        Queue() : head(nullptr), tail(nullptr), total(0){};
+        Queue() : head(nullptr), tail(nullptr), total(0), flag(true){};
         void push(T value);
         void show();
         T pop();
         bool empty();
         void reverse();
         int getTotal();
-
+        bool getFlag();
 };
