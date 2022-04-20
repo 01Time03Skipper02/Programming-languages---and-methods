@@ -19,4 +19,4 @@ int main(){
     queue.show();
     cout << "Total after all operations: " << queue.getTotal() << endl;
     cout << "Is queue empty? " << queue.empty() << endl;
-}   
+}

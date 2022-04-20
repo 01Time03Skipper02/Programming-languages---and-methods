@@ -19,7 +19,7 @@ class Queue{
         int total;
 
     public:
-        Queue() : head(NULL), tail(NULL), total(0){};
+        Queue() : head(nullptr), tail(nullptr), total(0){};
         void push(T value);
         void show();
         T pop();

@@ -4,15 +4,15 @@ template<typename T>
 void Queue<T>::push(T value){
     total += value;
     node *elem = new node;
-    elem -> next = NULL;
+    elem -> next = nullptr;
     elem -> value = value;
-    if (head != NULL){
+    if (head != nullptr){
         elem -> prev = tail;
         tail -> next = elem;
         tail = elem;
     }
     else {
-        elem -> prev = NULL;
+        elem -> prev = nullptr;
         head = tail = elem;
     }
 }
@@ -20,7 +20,7 @@ void Queue<T>::push(T value){
 template<typename T>
 void Queue<T>::show(){
     node *elem = tail;
-    while (elem != NULL){
+    while (elem != nullptr){
         cout << elem->value << " ";
         elem = elem->prev;
     }
@@ -32,13 +32,13 @@ T Queue<T>::pop(){
     total -= tail->value;
     T a = tail->value;
     tail = tail->prev;
-    tail->next = NULL;
+    tail->next = nullptr;
     return a;
 }
 
 template<typename T>
 bool Queue<T>::empty(){
-    return head == NULL && tail == NULL;
+    return head == nullptr && tail == nullptr;
 }
 
 template<typename T>
