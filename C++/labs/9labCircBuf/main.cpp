@@ -40,6 +40,6 @@ int main(){
     cout << "Queue after getting elements: ";
     res.show();
 
-    cout << "Get element link: " << res[2];
+    cout << "Get element link: " << res[2] << endl;
     cout << "And get element by link: " << *res[2];
 }

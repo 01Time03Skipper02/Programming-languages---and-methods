@@ -113,10 +113,20 @@ void Queue<T>::operator>>(T &pop){
 template <typename T>
 T *Queue<T>::operator[](int index){
     int n = 0;
-    node *elem = head;
-    while (n != index){
-        elem = elem->next;
-        n++;
+    node *elem;
+    if(flag){
+        elem = head;
+        while (n != index){
+            elem = elem->next;
+            n++;
+        }
+    }
+    if(!flag){
+        elem = tail;
+        while (n != index){
+            elem = elem->prev;
+            n++;
+        }
     }
     return &elem->value;
 }
@@ -125,3 +135,4 @@ template <typename T>
 int Queue<T>::length() {
     return len;
 }
+
