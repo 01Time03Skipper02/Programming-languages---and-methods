@@ -11,6 +11,10 @@ iostream
 -
 vector
 -
+iterator
+-
+string
+-
 
 C:/Users/1/Desktop/GitHub/Programming-languages---and-methods/C++/labs/10labIterators/implementation.cpp
 decloration.h
