@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/1/Desktop/GitHub/Programming-languages---and-methods/C++/labs/8lab patternClass/decloration.h
+iostream
+-
+string.h
+-
+
+C:/Users/1/Desktop/GitHub/Programming-languages---and-methods/C++/labs/8lab patternClass/implemention.cpp
+decloration.h
+C:/Users/1/Desktop/GitHub/Programming-languages---and-methods/C++/labs/8lab patternClass/decloration.h
+
+C:/Users/1/Desktop/GitHub/Programming-languages---and-methods/C++/labs/8lab patternClass/main.cpp
+implemention.cpp
+C:/Users/1/Desktop/GitHub/Programming-languages---and-methods/C++/labs/8lab patternClass/implemention.cpp
+
