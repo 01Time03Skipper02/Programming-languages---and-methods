@@ -11,6 +11,8 @@ iostream
 -
 string.h
 -
+time.h
+-
 
 C:/Users/1/Desktop/GitHub/Programming-languages---and-methods/C++/labs/8lab patternClass/implemention.cpp
 decloration.h
