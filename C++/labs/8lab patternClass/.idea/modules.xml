@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/8lab patternClass.iml" filepath="$PROJECT_DIR$/.idea/8lab patternClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/8lab_patternClass.iml" filepath="$PROJECT_DIR$/.idea/8lab_patternClass.iml" />
     </modules>
   </component>
 </project>

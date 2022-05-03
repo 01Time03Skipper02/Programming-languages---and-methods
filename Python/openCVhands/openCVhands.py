@@ -17,13 +17,13 @@ with mp_hands.Hands(
         image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
 
         image.flags.writeable = False
-        
+
         results = hands.process(image)
-        
+
         image.flags.writeable = True
         image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
         if results.multi_hand_landmarks:
-            print(results.multi_hand_landmarks) 
+            print(results.multi_hand_landmarks)
             for hand_landmarks in results.multi_hand_landmarks:
                 mp_drawing.draw_landmarks(
                     image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
